@@ -13,6 +13,7 @@ namespace GameOfLifeMvc
     {
         protected void Application_Start()
         {
+            DependencyInjection.ConfigureContainer();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

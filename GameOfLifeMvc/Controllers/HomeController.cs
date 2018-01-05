@@ -26,5 +26,6 @@ namespace GameOfLifeMvc.Controllers
 
             return View();
         }
+
     }
 }
