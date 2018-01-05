@@ -22,16 +22,8 @@ namespace GameOfLifeMvc.Controllers
         [HttpPost]
         public IHttpActionResult GenerateNewGeneration([FromBody] GameData gameBoardData)
         {
-            _gameEngine.GenerateNewGeneration(gameBoardData.InputData);
-            return base.Content(HttpStatusCode.OK, gameBoardData.InputData);
-        }
-
-        [Route("api/get")]
-        [HttpPost]
-        public IEnumerable<string> Get()
-        {
-            _gameEngine.GenerateNewGeneration("asdasda");
-            return new string[] { "value1", "value2" };
+            string result = _gameEngine.GenerateNewGeneration(gameBoardData.InputData);
+            return base.Content(HttpStatusCode.OK, result);
         }
     }
 }

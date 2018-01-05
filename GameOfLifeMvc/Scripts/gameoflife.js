@@ -1,7 +1,7 @@
 ﻿function sendDataToServer() {
     var dataToSend = $('#gameDataInput').val();
     var jqxhr = $.post("/api/newGeneration", { InputData: dataToSend }, function (data) {
-        alert("success");
+        $('#gameDataOutput').val(data);
     })
     .fail(function (data) {
         alert("error: " + data);
